@@ -70,16 +70,16 @@ html{
 chrome会默认最小字体的为12px,rem通常默认浏览器的字体大小为16px
 
 ```css
-font-size:62.5%; //1rem = 10px
+font-size: 62.5%; //1rem = 10px
 ```
 
 但由于chrome的限制,会使1rem=12px;所以为了改变这种情况,可以把font-size的大小乘以2或者默认20px;
 
 ```css
-font-size:125%; 
+font-size: 125%; 
 /* 1rem = 20px */
 
-font-size:625%;
+font-size: 625%;
 /* 1rem = 100px */	
 ```
 
