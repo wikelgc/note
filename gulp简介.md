@@ -1,12 +1,12 @@
----
-Gulp入门教程
----
+
+# Gulp入门教程
+
 　gulp是前端开发过程中一种基于流的代码构建工具，是自动化项目的构建利器；她不仅能对网站资源进行优化，而且在开发过程中很多重复的任务能够使用正确的工具自动完成；使用她，不仅可以很愉快的编写代码，而且大大提高我们的工作效率。
 
 　gulp是基于Nodejs的自动任务运行器， 她能自动化地完成 javascript、coffee、sass、less、html/image、css 等文件的测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。在实现上，她借鉴了Unix操作系统的管道（pipe）思想，前一级的输出，直接变成后一级的输入，使得在操作上非常简单。
 
 ## Gulp简介
-###核心
+### 核心
 
    流:简单来说就是建立在面向对象基础上的一种抽象的处理数据的工具。在流中，定义了一些处理数据的基本操作，如读取数据，写入数据等，程序员是对流进行所有操作的，而不用关心流的另一头数据的真正流向。流不但可以处理文件，还可以处理动态内存、网络数据等多种数据形式。
 
@@ -38,19 +38,19 @@ Gulp入门教程
 - 运行gulp任务
     要运行gulp任务，只需切换到存放gulpfile.js文件的目录(windows平台请使用cmd或者Power Shell等工具)，然后在命令行中执行gulp命令就行了，gulp后面可以加上要执行的任务名，例如gulp task1，如果没有指定任务名，则会执行任务名为default的默认任务。
 
-##入门指南
+## 入门指南
 - 全局安装gulp：
-```
+```node
 npm install --global gulp
 ```
  
 - 作为项目的开发依赖安装
-```
+```node
 npm install --save-dev gulp
 ```
 
 - 在项目根目录创建一个名为gulpfile.js的文件
-```
+```javascript
 var gulp = require('gulp');
 gulp.task('default',function(){
 	//放置默认的任务代码
@@ -58,25 +58,25 @@ gulp.task('default',function(){
 ```
 
 - 运行gulp
-```
+```node
 gulp
 ```
 
 >默认名为default的任务将会被运行。
 
 >想要单独执行特定的任务
->```
+>```node
 >gulp <task> <othertask>
 >```
 
 
-##gulp API文档
+## gulp API文档
 
 &nbsp;&nbsp;在介绍gulp API之前，我们首先来说一下gulp.js工作方式。在gulp中，使用的是Nodejs中的stream(流)，首先获取到需要的stream，然后可以通过stream的pipe()方法把流导入到你想要的地方，比如gulp的插件中，经过插件处理后的流又可以继续导入到其他插件中，当然也可以把流写入到文件中。所以gulp是以stream为媒介的，它不需要频繁的生成临时文件，这也是我们应用gulp的一个原因。
 
 &nbsp;&nbsp;gulp的使用流程一般是：首先通过gulp.src()方法获取到想要处理的文件流，然后把文件流通过pipe方法导入到gulp的插件中，最后把经过插件处理后的流再通过pipe方法导入到gulp.dest()中，gulp.dest()方法则把流中的内容写入到文件中。
 
-```
+```node
 var gulp = require('gulp');
 gulp.src('script/jquery.js')         // 获取流的api
     .pipe(gulp.dest('dist/foo.js')); // 写放文件的api
@@ -182,11 +182,8 @@ gulp.task('greet', function () {
 
 ### 执行任务:gulp.run()
 gulp.run()表示要执行的任务。可以会使用单个参数的形式传递多个任务，如下代码：
-```
+```node
 gulp.task（"end",function(){
 	gulp.run('task1','task2','task3');
 }）
 ```
-
-
-##

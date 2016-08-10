@@ -1,8 +1,7 @@
-======
-RlA基础介绍
-------
+# RlA基础介绍
 
-##RIA应用介绍
+
+## RIA应用介绍
 RIA(Rich Internet application):富互联网应用
 
 RIA技术特点
@@ -23,7 +22,7 @@ RIA应用的缺点
 - 对搜索引擎不友好
 
 
-##开发环境搭建
+## 开发环境搭建
 - NodeJS
 - 适合的编辑器
 - edp webserver

@@ -1,6 +1,4 @@
-====
-javascript之闭包
-----
+# javascript之闭包
 
 对于javascript程序员来说，闭包(closure)是一个难懂有必须征服的概念，闭包的形参与变量的作用域以及变量的生存周期密切相关。
 
@@ -34,7 +32,7 @@ var func = function(){
 func1();
 ```
 
-###变量的生成周期
+### 变量的生成周期
 
 除了变量的作用于外，另外一个跟闭包有关的概念是变量的生成周期
 
@@ -42,7 +40,7 @@ func1();
 
 而对于在函数内用var关键字声明的局部函数来说，当退出函数时，这些局部变量即都会随着被调用的结束而被销毁：
 
-```
+```javascript
 var func = function(){
 	var a=1; //退出函数后局部变量a将被销毁
     alert(a);
@@ -95,7 +93,7 @@ f();//5
 解决方法是在闭包的帮助下，把每次循环的i值都封闭起来。当事件函数中顺着作用域链中从内到外查找变量i时，会先找到被封闭在闭包环境中的i，如果有5个div，这里的div分别是0，1，2，3，4.
 
 
-```
+```javascript
 for(var i=0,len=nodes.length;i<len;i++){
 	(function(i){
         nodes[i].onclick()=function(){
@@ -123,7 +121,7 @@ var mult = function(){
 
 优化：
 
-```
+```javascript
 var mult = (function(){
 	var cache ={};
     var calculate=function(){ //封闭calculate函数
@@ -148,7 +146,7 @@ var mult = (function(){
 
 img对象经常用于进行数据上报
 
-```
+```javascript
 var report = function(){
 	var img=new Image();
    	img.src=src;
@@ -157,7 +155,8 @@ report("http://www.xxx.com/getUserInfo");
 ```
 
 但是通过查询后台的记录我们得知，因为一些低版本的浏览器的实现存在bug，这些浏览器的下是使用report函数进行数据上报会丢失30%左右的数据。而通过把img变量用闭包封闭起来，能解决请求丢失问题：
-```
+
+```javascript
 var report = (function(){
 	var imgs=[];
     return function(src){
@@ -169,11 +168,12 @@ var report = (function(){
 ```
 
 
-###3.闭包和面向对象设计
+### 3.闭包和面向对象设计
 过程和数据的结合是形容面向对象中的"对象"时经常使用的表达。对象以方法的形式包含的过程，而闭包则是在过程中以环境的形式包含了数据。通常用面向对象思想能实现的功能，用闭包也能实现。
 
-####TEST
-```
+#### TEST
+
+```javascript
 var extent = function({
 	var value = 0;
     return {
@@ -191,7 +191,8 @@ excent.call();//输出:3
 ```
 
 转化成面向对象的写法，就是：
-```
+
+```javascript
 var extent={
  value:0,
  call:function(){
@@ -218,7 +219,7 @@ exrent.call();//输出:2
 excent.call();//输出:3
 ```
 
-###4.闭包和内存管理
+### 4.闭包和内存管理
 闭包是一个非常强大的特性，但普遍对其诸多误解。其中一种便是闭包会造成内存泄漏，所以要尽量避免使用。
 
 跟闭包和内存泄漏有关系的地方是，使用闭包的同时比较容器形成循环引用，如果闭包的作用域链中保存者一些DOM节点，这时候就可能造成内存泄漏。

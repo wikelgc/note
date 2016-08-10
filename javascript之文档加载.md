@@ -1,8 +1,7 @@
----
-javascript之文档加载
----
+# javascript之文档加载
 
-##文档加载事件
+
+## 文档加载事件
 大部分Web应用都需要Web浏览器通知他们文档加载的完毕和为操作准备就绪的时间，window对象的load事件就是为了这个目的。load事件直到所有文档和所有图片加载完毕时才发生。然而，文档完全解析之后但在所有图片加载完毕之前开始运行脚本通常是安全的，所以如果基于`load`发生之前的事件触发脚本会提升web应用的启动时间。
 
 当文档加载完毕且所有延迟脚本都能执行完毕是会触发DOMContentLoaded事件，此时图片和异步脚本可能还在加载，但文档已经为操作准备就绪了。
@@ -15,7 +14,7 @@ window.onload=function(){
 
 
 
-###客户端javascript的时间线(javascript权威指南：13.3.4)
+### 客户端javascript的时间线(javascript权威指南：13.3.4)
 
 1. Web浏览器创建Document对象，并且开始解析Web页面，解析HTML元素和他们的文本内容后添加Element对象和Text节点到文档中。这个阶段`document.readystate`属性值是`'loading'`。
 
@@ -32,7 +31,7 @@ window.onload=function(){
 
 
 
-##jQuery
+## jQuery
 ### $(document).ready()函数介绍
 ```
 $(document).ready(){
@@ -44,12 +43,12 @@ $(document).ready()函数相比其他的获取javascript事件，并执行相应
 - 在一些传统页面中，可以会在`<body>`标签中有onload属性，该属性限定只能执行一个函数，并且也将'行为'标记引入到页面函数中。
 - 在$(document).ready()函数括号中所有代码都会提前(只要DOM在浏览器中被注册完毕)被执行，而不是在页面所有内容加载完毕之后才执行函数。
 
-###  多个$(document.read())函数
+### 多个$(document.read())函数
 `$(document).read()`函数的另一个功能，即他可以被多次使用。如果不太在意代码的大小，那么可以将`$(document).read()`函数放到所有的javascript文件中。无论函数是在一个文件中，还是在多个文件中，他都可以将这些函数归组。
 
-###$(function(){...})
+### $(function(){...})
 最后，可以使用`$(function(){...})`来代替`$(document).read()`
-```
+```javasript
 $(function(){
 	//将jQuery代码放在这里
 })

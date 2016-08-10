@@ -1,6 +1,4 @@
----
-jquery 语法
----
+# jquery 语法
 
 $(this).hide()
 演示 jQuery hide() 函数，隐藏当前的 HTML 元素。

@@ -1,8 +1,7 @@
-===
-jQuery之选择器
----
+# jQuery之选择器
 
-##基础选择器
+
+## 基础选择器
 - ID选择器:
 ```
 $(function(){
@@ -66,11 +65,11 @@ $(function(){
 })
 ```
 
-##过滤选择器
+## 过滤选择器
 
 过滤选择器主要是通过特定的过滤规则来刷选出所需要的DOM元素，过滤规则与CSS中的伪类选择器语法相同，即选择器都是一个冒号(:)开头。按不同的规则过滤。
 
-###基本的过滤器
+### 基本的过滤器
 - :first：选取第一个元素
 ```javascript
 $(function(){
@@ -148,7 +147,7 @@ $(function(){
 })
 ```
 
-###内容过滤选择器
+### 内容过滤选择器
 内容过滤器的过滤规则主要体现在他所包含的子元素或文本内容上：
 - :contains(text)  选取包含文本内容为"text"的元素
 ```javascript
@@ -178,7 +177,7 @@ $(function(){
 })
 ```
 
-###可见性过滤选择器
+### 可见性过滤选择器
 可见性过滤选择器是根据元素的可见和不可见状态来选择相应的元素。
 
 - :hidden 选取所有看不见的元素
@@ -193,61 +192,60 @@ $(function(){
 	$("div:visible").css("background","#F60";
 })
 
-###属性过滤选择器
+### 属性过滤选择器
 属性过滤选择器的规则是通过元素的属性来获取相应的元素
 
 - [attribute] 选取拥有此属性的元素
-```
+```javascript
 $(function(){
 	$("div[title]").css("background","#F60";//含有title属性的div元素
 })
 ```
 
-
 - [attribute=value] 选取属性值为value的元素
-```
+```javascript
 $(function(){
 	$("div[title=value]").css("background","#F60";//含有title属性的div元素
 })
 ```
 
 - [attribute!=value] 选取属性值不等于value的元素
-```
+```javascript
 $(function(){
 	$("div[title!=test]").css("background","#F60";
 })
 ```
 
 - [attribute^=value] 选取属性值以value开始的元素
-```
+```javascript
 $(function(){
 	$("div[title^=test]").css("background","#F60";
 })
 ```
 
 - [attribute$=value] 选取属性值以value结束的元素
-```
+```javascript
 $(function(){
 	$("div[title$=test]").css("background","#F60";
 })
 ```
 
 - [attribute*=value] 选取属性值含有value的元素
-```
+```javascript
 $(function(){
 	$("div[title*=test]").css("background","#F60";
 })
 ```
 
 - [attribute|=value] 选取属性等于给定字符串或以该字符串为前缀的元素
-```
+```javascript
 $(function(){
 	$("div[title|=test]").css("background","#F60";
 })
 ```
 
 - [attribute~=value] 选取属性用空格分隔的值中包含一个给定值的元素
-```
+```javascript
 $(function(){
 	$("div[title~=test]").css("background","#F60";
 })
@@ -260,7 +258,7 @@ $(function(){
 })
 ```
 
-###子元素过滤选择器
+### 子元素过滤选择器
 - nth-child
 - first-child
 - last-child

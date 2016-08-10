@@ -1,6 +1,5 @@
----
-React简介
----
+# React简介
+
 React是Facebook开源的一个用于构建用户界面的Javascript库，已经 应用于Facebook及旗下Instagram。
 
 和庞大的AngularJS不同，React专注于MVC架构中的V，即视图。 这使得React很容易和开发者已有的开发栈进行融合。
@@ -14,7 +13,7 @@ React抛弃HTML另起炉灶的原因之一是性能的考虑：DOM操作非常�
 引入虚拟DOM的另一个好处是，容易引入不同的渲染引擎。比如将你的应用代码渲染 到真实的DOM，或者nodejs服务端的无头DOM，或者，iOS/Android平台组件 —— 这就是 React Native ：
 
 
-##Hello React!
+## Hello React!
 
 和AngularJS相比，上手React简单到让人震惊。
 
@@ -32,6 +31,7 @@ React抛弃HTML另起炉灶的原因之一是性能的考虑：DOM操作非常�
 
 从第三个参数children开始的所有参数，都被认为是这个元素的子元素。考虑到 虚拟DOM好歹也是DOM，容易理解React需要通过这些子元素参数，让我们可以构造虚拟DOM树：
 
+```javascript
     var el = React.createElement(
         "ul",
         null,
@@ -39,6 +39,7 @@ React抛弃HTML另起炉灶的原因之一是性能的考虑：DOM操作非常�
         React.createElement("li",null,"Japan"),
         React.createElement("li",null,"Korea")
     );
+```
 
 上面的例子在虚拟DOM中创建了一个具有三个li子元素的ul元素，看起来有点累。不过 想想，造一个轮子，总会付出一些代价的。
 
@@ -52,7 +53,7 @@ React抛弃HTML另起炉灶的原因之一是性能的考虑：DOM操作非常�
 
 callback参数是可选的函数，当渲染完成或更新后被执行，通常我们不用它。
 
-##虚拟DOM
+## 虚拟DOM
 
 虚拟DOM是React的基石。
 
@@ -69,7 +70,7 @@ VDOM
 相当棒的思路！
 
 
-##React组件
+## React组件
 
 在React中定义一个组件也是相当的容易，组件就是一个 实现预定义接口的JavaScript类：
 
@@ -101,7 +102,7 @@ VDOM
     React.createElement(EzLedComp);
     
     
-##轮子来了：JSX
+## 轮子来了：JSX
 
 React引入虚拟DOM以后，创建DOM树得在JavaScript里写代码，这使得界面定义 变得相当繁琐。比如我们创建两排的液晶组件得这么写：
 

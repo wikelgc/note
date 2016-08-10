@@ -1,8 +1,6 @@
----
-css命名规范
----
+# css命名规范
 
-##常用的css命名规范
+## 常用的css命名规范
 - 头 header
 - 内容 content/container
 - 尾 footer
@@ -42,7 +40,7 @@ css命名规范
 
 
 
-##常用的css文件命名
+## 常用的css文件命名
 - 主要的：master.css
 - 模块：module.css
 - 基本公用：base.css

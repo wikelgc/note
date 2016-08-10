@@ -1,10 +1,9 @@
----
-Webpack简介
----
+
+# Webpack简介
 
 Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。
 
-##Webpack的特点和优势
+## Webpack的特点和优势
 
 Webapck 和其他模块化工具有什么区别呢？
 
@@ -28,7 +27,7 @@ Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基
 Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译。
 
 
-##安装
+## 安装
 
 首先要安装 Node.js， Node.js 自带了软件包管理器 npm，Webpack 需要 Node.js v0.6 以上支持，建议使用最新版 Node.js。
 
@@ -55,7 +54,7 @@ Webpack 目前有两个主版本，一个是在 master 主干的稳定版，一�
     
     
     
-##Loader介绍
+## Loader介绍
 
 Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。
 

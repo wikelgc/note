@@ -1,8 +1,7 @@
----
-Node入门
----
+# Node入门
 
-##基于Node.js的web应用
+
+## 基于Node.js的web应用
 
 - 新建一个HTTP服务器
 ```

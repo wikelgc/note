@@ -1,12 +1,8 @@
----
-#RequireJs简介
+# RequireJs简介
 标签（空格分隔）： RequireJs
 
----
 
-#简介
 
-#使用
 ## 加载JavaScript文件
 requireJS的目标是鼓励代码模块化，它使用了不同于传统的`script`标签脚本加载步骤。可以用他来加速，优化代码，但其主要目的还是为了代码模块化。他鼓励在使用脚本时以moduleID代替URL地址。
 
@@ -63,7 +59,7 @@ function   ($,        canvas,   sub) {
 
 注意在示例中，三方库如jQuery没有将版本号包含在他们的文件中。
 
-##data-main入口点
+## data-main入口点
 require.js在加载的时候UI检查data-main属性
 ```
 <!--when require.js loads ti will inject another script tag(with async attribute) for scripts/main.js-->

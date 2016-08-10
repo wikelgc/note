@@ -1,7 +1,7 @@
----
-javascript笔试题
----
-####1. this
+# javascript笔试题
+
+1. this
+
 ```javascript
 var length = 10;
 function fn(){
@@ -22,7 +22,8 @@ obj.method(fn,1);
 答：输出10，2
 > 第一次执行的环境是window对象，即fn的this指向的window，所以输出的10，第二次执行时相当于arguments调用方法，this指向argument，而这里传了长度为2.
 
-####1. var和函数的提前声明
+
+2. var和函数的提前声明
 
 ```javascript
 function fn(a){

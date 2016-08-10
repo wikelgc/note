@@ -1,6 +1,6 @@
----
-flex
----
+
+# flex
+
 ## 简介
 
 CSS flex 属性是一个简写属性，它具有定义一个可伸缩项目的能力。flex元素可以根据他们的flex-grow 因子拉伸以填充可用空间，或根据他们的 flex-shrink 因子收缩以防止溢出。
@@ -22,7 +22,7 @@ flex-shrink: yes, as a number
 flex-basis: yes, as a length, percentage or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers.
 - 正规顺序	order of appearance in the formal grammar of the values
 
-##语法
+## 语法
 
 ```
 /* 0 0 auto */
@@ -54,7 +54,7 @@ flex: unset;
 ```
 
 
-##Values
+## Values
 
 <'flex-grow'>
 定义flex item的flex-grow属性。 详细内容请参见 <number>。 负值无效。 默认值为1。
@@ -67,7 +67,7 @@ none
 
 
 
-##实例
+## 实例
 ```
 //css
 #flex-container {

@@ -1,18 +1,17 @@
-======
-javascript的this使用技巧
-------
+# javascript的this使用技巧
 
-##this
+
+## this
 javascript中的this总是指向一个对象，而具体指向那个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的对象。
 
-###this的指向
+this的指向
 在javascript的实际运用中，this的指向大致可以分为以下四种：
 - 作为对象的方法调用
 - 作为普通函数调用
 - 构造器调用
 - Function.prototype.call或Function.prototype.apply调用。
 
-###1.作为函数的方法调用
+### 1.作为函数的方法调用
 当函数作为对象的方法被调用时，this指向该对象
 ```javascript
 var obj={
@@ -25,7 +24,7 @@ var obj={
 obj.getA();
 ```
 
-###2.作为普通函数调用
+### 2.作为普通函数调用
 当函数不作为对象的属性被调用时，也就是普通函数方式是，此时的this总是指向全局函数。在浏览器的javascript中，全局函数指的的window对象。
 ```javascript
 //demo-1

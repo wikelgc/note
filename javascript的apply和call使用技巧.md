@@ -1,8 +1,8 @@
-====
-javascript的call和apply
-----
 
-##1.call和apply的区别
+# javascript的call和apply
+
+
+## 1.call和apply的区别
 ECAMScript3给Function的原型定义两个方法：Function.protype.call和Function.prototype.apply。他们的作用一模一样，区别仅在于闯入参数形式的不同。
 
 - apply接受两个参数，第一个参数指定了函数体内this对象的指向，第二个参数为一个带下标的集合，这个集合可以是数组，也可以是类数组，apply方法把这个集合中元素作为参数传递给被调用的函数；
@@ -17,6 +17,7 @@ ECAMScript3给Function的原型定义两个方法：Function.protype.call和Func
     这段代码中那个，参数1，2，3被放在数组中一起传入func函数，他们分别对应func参数列表中的a,b,c。
     
 - call传入的参数不固定，跟apply相同的是，第一个参数也是代表函数体内的this指向，从第二个参数后开始往后，每个参数依次传入参数：
+
 ```javascript
 var func = function(a,b,c){
 	alert([a,b,c]);//输出[1,2,3]
@@ -47,7 +48,8 @@ func.call(null,1,2,3);
     func.apply(null,[1,2,3]);
     ```
     
-##2.callj和apply的用途
+## 2.callj和apply的用途
+
 call和apply在实际开发中的用途
 1. 改变this的指向：call和apply最常见的用途是改变函数内部的this指向：
 

@@ -1,6 +1,5 @@
----
-javascript综合能力的面试题
----
+# javascript综合能力的面试题
+
 
 ```javascript
 function Foo(){
