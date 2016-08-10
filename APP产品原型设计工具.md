@@ -1,6 +1,5 @@
 # APP产品原型设计工具
 
-
 ## POP(prototyping on paper)App产品原型设计工具详解
 
 - 首先，一款优秀的移动App产品原型设计工具应该具备：
