@@ -5,13 +5,13 @@
 ## 基本用法
 React Router安装命令如下
 
-```bash
+```javascript
 npm install -s react-router
 ```
 
 使用时，路由器Router就是React的一个组件
 
-```jsx
+```javascript
 import {Router} from 'react-router';
 render(<Router/>,document.getElementById('app'));
 
