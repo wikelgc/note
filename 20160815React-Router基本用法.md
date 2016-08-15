@@ -36,7 +36,7 @@ Router 组件中有一个参数history，它的值hashHistory表示:路由切换
 
 Route组件定义了URL路径与组件的对应关系，并可以同时使用多个Route组件。
 
-```
+```javascript
 <Router history = {hashHistory}>
 	<Route path = "/" component = {App}/>
 	<Route path = "/repos" component = {Repos}/>
@@ -50,7 +50,7 @@ Route组件定义了URL路径与组件的对应关系，并可以同时使用多
 ## 嵌套路由
 
 Route组件还可以嵌套
-```
+```javascript
 	<Router history = "hashHistory">
 		<Route path = "/" component = {App}>
 			<Route path = "/" component = {Repos} />
@@ -62,7 +62,7 @@ Route组件还可以嵌套
 
 但App组件要写的如下的样子
 
-```
+```javascript
 export default React.createClsss({
 	render(){
 	return <div>{this.props.children}</div>
@@ -73,7 +73,7 @@ export default React.createClsss({
 上面的代码中，App组件的this.props.children属性就是子组件。
 子路由也可以不写在Router组件里面，单独闯入Router组件的routes。
 
-```
+```javascript
 let routes = (
 		<Route path = "/" component = {App}>
 			<Route path = "/repos" component = {Repos}/>
@@ -89,7 +89,7 @@ let routes = (
 
 Route组建的path属性指定路由的匹配规则。这个属性是可以省略的。
 
-```
+```javascript
 	<Route path = "inbox" component = {Inbox}>
 		<Route path = "messages/:id" component={Message}/>
 	</Route>
@@ -102,7 +102,7 @@ Route组建的path属性指定路由的匹配规则。这个属性是可以省�
 ```
 
 如何省略外层Route的path参数，写成下面的样子。
-```
+```javascript
 <Route component = {Inbox}>
 	<Route path = "inbox/message/:id" component={Message} />
 </Route>
@@ -112,7 +112,7 @@ Route组建的path属性指定路由的匹配规则。这个属性是可以省�
 ## 通配符
 path属性可以使用通配符
 
-```
+```javascript
 <Route path = "/hello/:name">
 // 匹配 /hello/michael
 // 匹配 /hello/ryan
@@ -140,7 +140,7 @@ path 属性也可以使用相对路劲。匹时就会相对于父组件的路径
 因此通常采用{this.props.children||<Home/>}这样的写法。只是，Home明明是Acounts和Statement的同级组件，却没有在toute中。
 
 IndexRoute就是解决这个问题，显示指定home是根路由的子组件，即指定默认情况下加载的子组件。可以把IndexRoute想像成某个路径的index.html.
-```
+```javascript
 <Router>
 	<Route path= "/" component = {App}>
 		<IndexRoute component = {Home} />
@@ -161,15 +161,16 @@ IndexRoute就是解决这个问题，显示指定home是根路由的子组件，
 
 `Redirect`组件用于路由的跳转，即用户访问一个路由，会自动跳转到另一个路由。
 
-```
+```javascript
 <Route path = "inbox" component = {Inbox}>
 	<Redirect from = "message/:id" to = "/messages/:id">
 </Route>
-
+```
 
 ## IndexRedirect组件
 `IndexRedirect`组件用于访问根路由的时候，将用户重定向到某个子组件。
 
+```javascript
 	<Route path = "/" component = {App}>
 		<IndexRedirect to = "/welcome" />
 		<Route path = "welcome" component = {welcome}>
@@ -184,7 +185,7 @@ IndexRoute就是解决这个问题，显示指定home是根路由的子组件，
 `Link`组件用于取代<a>元素，生成一个链接，允许用户点击后跳转到另一个路由。
 他基本上就是<a>React版，并可以接受Router的状态。
 
-```
+```javascript
 render(){
 	return (
 		<div>
@@ -227,7 +228,7 @@ createMemotyHistoty
 ```
 如果设置为hashHistory，路由将同URL的hash部分(#)切换，URL的形式example.com/#some#path.
 
-```
+```javascript
 import {hashHistory} from 'react-router'
 
 render(
@@ -238,7 +239,7 @@ render(
 
 如果设置为browerHistory，浏览器的路由就不再通过Hash完成了，而显示正常的路径example.com/some/path,实际调用的是浏览器的History API.
 
-```
+```javascript
 import {browserHistory} from 'react-router'
 
 render(
@@ -249,7 +250,7 @@ render(
 ## 表单处理
 Link组件用于正常用户点击跳转，但有表单时还需要跳转，点击跳转等操作
 
-```
+```html
 	<from>
 		<input type = "text" placeholder="userName" />
 		<input type = "text" placeholder="repo" />
@@ -273,7 +274,7 @@ handleSubmit(event){
 
 第二种方法是使用context对象
 
-```
+```javascript
 export default React.createClass({
 	contextTypes:{
 	router：React.ProTypes.object
