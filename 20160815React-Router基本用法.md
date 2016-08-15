@@ -206,6 +206,7 @@ render(){
 
 ## IndexLink组件
 如果链接到根路由，则不需要使用Link组件，而要使用IndexLInk组件。
+
 ```
 	<IndexLink to = "/" activeClassName = "active">Home</IndexLink>
 ```
@@ -213,7 +214,9 @@ render(){
 另一种方法是使用Link组件的onlyActiveOnIndex属性，也能达到同样的效果。
 
 ## histroy属性
+
 Router 组件的history属性，用来监听浏览器的地址栏变化，并将URL解析成一个地址对象，共React Router匹配。
+
 
 history属性一共有三种：
 ```
@@ -222,4 +225,65 @@ hashHistory
 createMemotyHistoty
 
 ```
-如果这位hashHistory，路由将同URL的hash部分(#)切换，URL的形式
+如果设置为hashHistory，路由将同URL的hash部分(#)切换，URL的形式example.com/#some#path.
+
+```
+import {hashHistory} from 'react-router'
+
+render(
+	<Router history = {hashHistory} routes = {routes} />,
+	document.getElementById('app');
+)
+```
+
+如果设置为browerHistory，浏览器的路由就不再通过Hash完成了，而显示正常的路径example.com/some/path,实际调用的是浏览器的History API.
+
+```
+import {browserHistory} from 'react-router'
+
+render(
+	<Router histoty = {browserHistory} routes = {routes} />
+	document.getELementById('app');
+)
+
+## 表单处理
+Link组件用于正常用户点击跳转，但有表单时还需要跳转，点击跳转等操作
+
+```
+	<from>
+		<input type = "text" placeholder="userName" />
+		<input type = "text" placeholder="repo" />
+		<button type ="submit">Go</button>
+	</from>
+```
+
+第一种方法使用browserHistory.push
+
+```javascript
+import {browserHistory} from 'react-router'
+
+handleSubmit(event){
+	event.preventDefault()
+	const userName = event.target.elements[0].value;
+	const repo = event.target.elements[1].value;
+	const path = '/repos/$(userName)/$(repo)';
+	browserHistory.push(path);
+}
+```
+
+第二种方法是使用context对象
+
+```
+export default React.createClass({
+	contextTypes:{
+	router：React.ProTypes.object
+},
+	handleSubmit(event){
+	this.context.router.push(path);
+}
+
+## 路由的钩子
+
+每个路由都有Enter和Leave钩子，用户进入或离开该路由是触发。
+})
+```
