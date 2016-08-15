@@ -5,7 +5,7 @@
 ## 基本用法
 React Router安装命令如下
 
-```shell
+```bash
 npm install -s react-router
 ```
 
