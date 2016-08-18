@@ -2,17 +2,17 @@
 
 ```
 <Link to = '/'>
-	<Wrap onClick = {(event)=>{event.stopPropagation()}} />
+  <Wrap onClick = {(event)=>{event.stopPropagation()}} />
 </>
 ```
 
 ## 事件冒泡
 
-1. event.stopPropagation：阻止当前事件的进一步冒泡行为。
+1.event.stopPropagation：阻止当前事件的进一步冒泡行为。
 
-2. event.preventDefault ：如果事件对象的cancelable属性为true,则该方法可以取消事件的默认动作.但并不取消事件的冒泡行为。
+2.event.preventDefault ：如果事件对象的cancelable属性为true,则该方法可以取消事件的默认动作.但并不取消事件的冒泡行为。
 
-3. preventDefault 方法不会阻止该事件的进一步冒泡. event.stopPropagation 方法才有这样的功能.
+3.preventDefault 方法不会阻止该事件的进一步冒泡. event.stopPropagation 方法才有这样的功能.
 
 备注：在事件触发后的任何阶段调用preventDefault方法来取消该事件,意味着该事件的所有默认动作都不会发生
 
@@ -83,14 +83,14 @@ ES6 可以使用箭头定义函数,不建议使用这种方法定义类。箭头
 
 ### 语法
 
-1. 具有一个参数的简单函数
+1.具有一个参数的简单函数
 
 ```javascript
 let single = a => console.log(a);
 single("on param"); // 'xx'
 ```
 
-2. 没有参数的需要用在箭头钱加上小括号
+2.没有参数的需要用在箭头钱加上小括号
 
 ```javascrpt
 var log = () => {
@@ -98,14 +98,14 @@ var log = () => {
 }
 ```
 
-3.  多个参数需要用到小括号，参数间逗号间隔
+3.多个参数需要用到小括号，参数间逗号间隔
 
 ```javascript
 var add = (a, b) => a + b
 add(3, 8) // 11
 ```
 
-4. 函数体多条语句需要用到大括号
+4.函数体多条语句需要用到大括号
 
 ```javascript
 var add = (a, b) => {
@@ -117,7 +117,7 @@ var add = (a, b) => {
 }
 ```
 
-5. 返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了
+5.返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了
 
 ```javascript
 var getHash = arr => {
@@ -129,7 +129,7 @@ var getHash = arr => {
 }
 ```
 
-6. 直接作为事件handler
+6.直接作为事件handler
 
 ```javascript
 document.addEventListener('click', ev => {
@@ -137,7 +137,7 @@ document.addEventListener('click', ev => {
 })
 ```
 
-7. 作为数组排序回调
+7.作为数组排序回调
 
 ```javascript
 let arr = [1, 9 , 2, 4, 3, 8].sort((a, b) => a-b>0?1:-1)
