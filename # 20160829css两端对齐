@@ -1,0 +1,34 @@
+# 20160829css两端对齐
+
+在做表单时我们经常遇到让上下两个字段对齐的情况，比如姓名， 手机号码， 出生地。这样我们就要用到 text-align， text-justify样式了。
+
+text-align直接设为justify就行了，text-justify的情况就复杂了，可能有人对它还不熟悉。IE的取值如下：
+
+auto :允许浏览器用户代理确定使用的两端对齐法则
+inter-word :通过增加字之间的空格对齐文本。该行为是对齐所有文本行最快的方法。它的两端对齐行为对段落的最后一行无效
+newspaper : 通过增加或减少字或字母之间的空格对齐文本。是用于拉丁文字母表两端对齐的最精确格式
+distribute :处理空格很像newspaper，适用于东亚文档。尤其是泰国
+distribute-all-lines :两端对齐行的方式与distribute相同，也同样不包含两段对齐段落的最后一行。适用于表意字文档
+inter-ideograph : 为表意字文本提供完全两端对齐。他增加或减少表意字和词间的空格
+但它最早是作为IE的私有实现，像text-overflow， overflow-x等，在FF很晚才实现，换言之有严格的兼容性问题。并且FF，chrome需要手动在汉字间插入空白或软换行标签才生效，在chrome遇到的阻力就更大了。p>
+
+这两天一直在QQ群与朋友们在聊这问题，最后由一丝给出究极方案：
+
+```
+.test1 {
+      text-align:justify;
+      text-justify:distribute-all-lines;/*ie6-8*/
+      text-align-last:justify;/* ie9*/
+      -moz-text-align-last:justify;/*ff*/
+      -webkit-text-align-last:justify;/*chrome 20+*/
+  }
+  @media screen and (-webkit-min-device-pixel-ratio:0){/* chrome*/
+      .test1:after{
+          content:".";
+          display: inline-block;
+          width:100%;
+          overflow:hidden;
+          height:0;
+      }
+  }
+```
