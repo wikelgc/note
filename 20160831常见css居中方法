@@ -1,0 +1,24 @@
+# 20160831常见css居中方法
+
+
+## 表格居中
+HTML：
+<div id="box"><div id="content"></div></div>
+CSS：
+#box { display: table; height: 400px; background: #c00; }
+#content { color: #fff; text-align: center; display: table-cell; vertical-align: middle; }
+兼容性：http://caniuse.com/#search=table，除了IE6/7都支持
+
+## inline-block
+HTML:
+<div id="box">
+<div id="content">我是内容<br />我也是内容</div>
+<div id="actor">我是演员</div>
+</div>
+CSS:
+#box { height: 400px; background: #c00;}
+#content, #actor { display: inline-block; vertical-align: middle;}
+#content { font-size: 12px; color: #fff;}
+#actor {height: 400px; font-size: 0;}
+加粗体的部分是关键所在。原理是都显示为行框的高度由最高的行内框决定。div#actor作为演员，高度指定和父元素一致。
+兼容性：支持inline-block的浏览器均可。对于IE6/7，可以先使用hack方式使其支持Inline-block后，使用此方法实现垂直居中。
